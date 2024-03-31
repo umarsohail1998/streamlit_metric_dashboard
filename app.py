@@ -1,9 +1,6 @@
 import streamlit as st
 from sklearn import datasets
 
-st.title("Hello, Streamlit!")
-st.write("Hello, World!")
-
 iris = datasets.load_iris()
 mapping_dict = dict(zip(range(3), iris.target_names))  
 
