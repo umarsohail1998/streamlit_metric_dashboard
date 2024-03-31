@@ -4,10 +4,10 @@ import joblib
 import os
 st.set_page_config(layout="wide")
 
-files = os.listdir(os.getcwd())
-st.write("Files in the current directory:")
-for file in files:
-    st.write(file)
+# files = os.listdir(os.getcwd())
+# st.write("Files in the current directory:")
+# for file in files:
+#     st.write(file)
 
 
 iris = datasets.load_iris()
@@ -17,8 +17,8 @@ mapping_dict = dict(zip(range(3), iris.target_names))
 file_path = os.path.join(os.getcwd(), 'iris_model.pkl')
 
 # Load model
-st.write(file_path)
-st.write(os.getcwd())
+# st.write(file_path)
+# st.write(os.getcwd())
 loaded_model = joblib.load(file_path)
 # loaded_model = joblib.load('./iris_model.pkl')
 
@@ -86,10 +86,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-files = os.listdir(os.getcwd())
-st.write("Files in the current directory:")
-for file in files:
-    st.write(file)
+# files = os.listdir(os.getcwd())
+# st.write("Files in the current directory:")
+# for file in files:
+#     st.write(file)
 
 if submit == True: 
     # Create a dictionary with the user's input values  
