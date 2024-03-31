@@ -5,6 +5,7 @@ iris = datasets.load_iris()
 mapping_dict = dict(zip(range(3), iris.target_names))  
 
 # ---------- Start of Streamlit app
+loaded_model = joblib.load('iris_model.pkl')
 
 st.set_page_config(layout="wide")
 
@@ -90,8 +91,10 @@ if submit == True:
     # Retrieve the prediction_json from the backend
     # Apply the mapping defined at the beginning to print the name of iris flower species
 
-    prediction_json = {"prediction" : 1}  # dummy
-    flower_name = mapping_dict[prediction_json['prediction']]
+#     prediction_json = {"prediction" : 1}  # dummy
+#     flower_name = mapping_dict[prediction_json['prediction']]
+    user_input_json = [list(user_input.values())]
+    flower_name = mapping_dict[loaded_model.predict(user_input_json)[0]]
 
     st.metric("Flower type", 
             str(flower_name),
