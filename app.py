@@ -10,12 +10,17 @@ for file in files:
     st.write(file)
 
 
-
 iris = datasets.load_iris()
 mapping_dict = dict(zip(range(3), iris.target_names))  
 
 # ---------- Start of Streamlit app
-loaded_model = joblib.load('./iris_model.pkl')
+file_path = os.path.join(os.getcwd(), 'iris_model.pkl')
+
+# Load model
+st.write(file_path)
+st.write(os.getcwd())
+loaded_model = joblib.load(file_path)
+# loaded_model = joblib.load('./iris_model.pkl')
 
 
 st.markdown("<h1 style='text-align: center; color: black;'>FLOWER CLASSIFICATION </h1>",
