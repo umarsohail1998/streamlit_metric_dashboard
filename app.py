@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
 from sklearn import datasets
 
 st.title("Hello, Streamlit!")
