@@ -2,6 +2,12 @@ import streamlit as st
 from sklearn import datasets
 import joblib
 import os
+st.set_page_config(layout="wide")
+
+files = os.listdir(os.getcwd())
+st.write("Files in the current directory:")
+for file in files:
+    st.write(file)
 
 
 
@@ -11,7 +17,6 @@ mapping_dict = dict(zip(range(3), iris.target_names))
 # ---------- Start of Streamlit app
 loaded_model = joblib.load('./iris_model.pkl')
 
-st.set_page_config(layout="wide")
 
 st.markdown("<h1 style='text-align: center; color: black;'>FLOWER CLASSIFICATION </h1>",
             unsafe_allow_html=True)
